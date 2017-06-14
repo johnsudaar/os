@@ -23,15 +23,15 @@ int 0x10
 mov bp, 0x8000 ; Load data far from our own code
 mov sp, bp     ; Initialize the Stack Pointer to BP
 
-push 'A'
+push 'A' ; Push some values to the stack
 push 'B'
 push 'C'
 
-pop bx
+pop bx ; Pop the first value ('C') and store it into the bx register
 mov al, bl
 int 0x10
 
-pop bx
+pop bx ; Pop the second value ('B') and store it into the bx register
 mov al, bl
 int 0x10
 
@@ -45,16 +45,29 @@ int 0x10
 mov bx, startup_message ; Storing the data into the bx register
 call print_string       ; Calling the print_string routine
 
+mov al, ' '
+int 0x10
+
+mov bx, msg_a
+call print_hex
+
+mov bx, msg_b
+call print_hex
+
 jmp $ ; Endless loop (Jum here)
 
 ; Include dependencies
 %include "print_string.asm"
+%include "print_hex.asm"
 
-; data
+; --------
+; - DATA -
+; --------
 startup_message:
 	db 'Booting JOSHUA OS v1.0', 0
 
-jmp $ ; Jump to current address
+msg_a: db 0x34, 0x12 ; 0x1234 Endianness
+msg_b: db 0xcd, 0xab
 
 ; -----------------------------------
 ; -  Padding and BIOS magic number  -

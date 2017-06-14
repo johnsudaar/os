@@ -1,4 +1,4 @@
-boot_sect.bin: bootloader.asm
+boot_sect.bin: bootloader.asm print_hex.asm print_string.asm
 	nasm bootloader.asm -f bin -o boot_sect.bin
 
 run: boot_sect.bin
