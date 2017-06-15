@@ -1,7 +1,6 @@
 print_string:           ; Take a string store in the BX register and print it
 	pusha 								; Store the current registry values
 	mov ah, 0x0e          ; Call 0x10 (0x03h) : TTY Write (BIOS)
-	jmp print_string_main ; Main print_string routine
 
 print_string_main:
 	mov cx, [bx]          ; Store the current value into the C register
