@@ -16,6 +16,14 @@ $ make run
 
 ## Tools
 
+### Install the tools
+
+```
+$ apt install qemu nasm
+```
+
+### Use the tools
+
 To compile my ASM code i use nasm:
 
 ```shell
