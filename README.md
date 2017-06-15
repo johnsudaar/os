@@ -6,7 +6,7 @@ Let's try it !
 
 I'm learning how to write an OS from scratch, for now, nothing fancy, i can just print some strings to a screen (Yay i guess?)
 
-The 16bit folder is the first one i created. This is in the simplified 16bit processor mode and use some bios instruction to help me (so it's basically cheating).
+The `16bit/` folder is the first one i created. This is in the simplified 16bit processor mode and use some bios instruction to help me (so it's basically cheating).
 
 If the project inside the folder can be run, a Makefile will be present. To run the code just type:
 
@@ -14,7 +14,7 @@ If the project inside the folder can be run, a Makefile will be present. To run 
 $ make run
 ```
 
-## Tools
+## Tools
 
 To compile my ASM code i use nasm:
 
@@ -28,13 +28,13 @@ And to run it i use qemu:
 $ qemu-system-i386  [INPUT_FILE.bin]
 ```
 
-## Usefull qemu trics
+## Usefull qemu trics
 
-### Debug mode
+### Debug mode
 
 To enter qemu debug mode press: ctrl-alt-shift-1
 
-#### Print a value
+#### Print a value
 
 ```
 print $ebx
@@ -42,7 +42,7 @@ print $ebx
 
 Will print the value of the ebx register
 
-#### Inspect memory:
+#### Inspect memory:
 
 ```
 x $ebx
