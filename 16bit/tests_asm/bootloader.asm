@@ -2,7 +2,10 @@
 ; -  Hello worldi -
 ; -----------------
 
-[org 0x7c00] ; Compensate for the BIOS padding (our program start at the 0x7c00 address
+;[org 0x7c00] ; Compensate for the BIOS padding (our program start at the 0x7c00 address
+
+mov bx, 0x7c0 ; We cannot assign directly to bs
+mov ds, bx    ; Set our segment to 0x7c0 (So our address will be 0x7c0 * 16 + address) (so it's the same thing that the org method)
 
 ; More interrupts documentation here: https://en.wikipedia.org/wiki/BIOS_interrupt_call
 
@@ -57,8 +60,8 @@ call print_hex
 jmp $ ; Endless loop (Jum here)
 
 ; Include dependencies
-%include "print_string.asm"
-%include "print_hex.asm"
+%include "../utils/print_string.asm"
+%include "../utils/print_hex.asm"
 
 ; --------
 ; - DATA -
@@ -66,8 +69,8 @@ jmp $ ; Endless loop (Jum here)
 startup_message:
 	db 'Booting JOSHUA OS v1.0', 0
 
-msg_a: db 0x34, 0x12 ; 0x1234 Endianness
-msg_b: db 0xcd, 0xab
+msg_a: dw 0x1234
+msg_b: dw 0xabcd
 
 ; -----------------------------------
 ; -  Padding and BIOS magic number  -

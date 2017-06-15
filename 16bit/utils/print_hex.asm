@@ -1,3 +1,5 @@
+; Print the hex value of the memory address pointed by bx
+
 HEX_OUT: db ' 0x0000',0            ; Base message string
 
 print_hex:                         ; Print the hexadecimal value stored at the bx address
