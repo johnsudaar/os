@@ -1,7 +1,13 @@
+#include "../drivers/screen.h"
+
 int main(){
-  char *video_memory = 0xb8000;
-  *video_memory = 'X';
-  *(video_memory + 1) = 0xf0;
+  clear_screen();
+  print("Start!");
+  for(int i = 0; i < MAX_ROW -2 ; i++){
+  print("Hello world\n");
+  }
+  print("Scroll ? \n");
+  print("Scroll2 ? \n");
   while(1) {
   }
 }

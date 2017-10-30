@@ -1,5 +1,5 @@
 [bits 32]
-; Print the null terminaed string present in the ebx register
+; Print the null terminated string present in the ebx register
 
 ; To do so, we must directly write into the device memory.
 ; This device is a screen of 80x25 chars.

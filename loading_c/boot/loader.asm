@@ -16,7 +16,7 @@
 	mov dh, 0x02           ; Start on the second sector
 	mov bx, 0              ; Segment 0
 	mov cx, KERNEL_ADDRESS ; At the kernel address
-	mov al, 1              ; Read 1 sector
+	mov al, 4              ; Read 1 sector
 	call read_sectors      ; Laucn the sector reading procedure
 
 	mov bx, KERNEL_LOADED  ; Print the kernel loadied message
