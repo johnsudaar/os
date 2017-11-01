@@ -1,5 +1,4 @@
-SRC=$(wildcard kernel/*.c drivers/*.c)
-HEADERS = $(wildcard kernel /*.h)
+SRC=$(wildcard kernel/*.c drivers/*.c utils/*.c)
 ASM_SOURCES = $(wildcard boot/utils/*.asm)
 OBJ=$(SRC:.c=.o)
 
@@ -8,7 +7,7 @@ all: image.img
 image.img: boot/loader.bin kernel.bin
 	cat $^ > image.img
 
-%.o: %.c ${HEADERS}
+%.o: %.c
 	gcc -fno-pie -mtune=i386 -m32 -march=i386 -ffreestanding -o $@ -c $<
 
 kernel.bin:kernel_entry.o ${OBJ}

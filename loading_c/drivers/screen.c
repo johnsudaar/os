@@ -1,5 +1,6 @@
 #include "screen.h"
 #include "../kernel/kernel.h"
+#include "../utils/utils.h"
 
 int get_screen_offset(int col, int row) {
   return (row * MAX_COL + col) * 2;
@@ -92,3 +93,12 @@ void clear_screen() {
   set_cursor(get_screen_offset(0,0));
 }
 
+void print_byte(unsigned char value) {
+  print_char(to_hex(value >> 4), -1, -1, WHITE_ON_BLACK);
+  print_char(to_hex(value), -1, -1, WHITE_ON_BLACK);
+}
+
+void print_word(unsigned short value) {
+  print_byte(value >> 8);
+  print_byte(value);
+}

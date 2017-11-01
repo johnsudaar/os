@@ -1,13 +1,12 @@
 #include "../drivers/screen.h"
+#include "../drivers/keyboard.h"
 
 int main(){
   clear_screen();
-  print("Start!");
-  for(int i = 0; i < MAX_ROW -2 ; i++){
-  print("Hello world\n");
-  }
-  print("Scroll ? \n");
-  print("Scroll2 ? \n");
-  while(1) {
+  print("Started !\n");
+  unsigned char value;
+  while(1){
+    value = get_key_released();
+    print_char(to_char(value), -1, -1, 0);
   }
 }

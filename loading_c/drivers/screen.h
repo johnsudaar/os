@@ -22,4 +22,7 @@ void print_char(char, int, int, char);
 void print_at(char*, int, int);
 void print(char*);
 void clear_screen();
+
+void print_byte(unsigned char);
+void print_word(unsigned short);
 #endif
