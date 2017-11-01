@@ -1,4 +1,4 @@
-SRC=$(wildcard kernel/*.c drivers/*.c utils/*.c)
+SRC=$(wildcard kernel/*.c drivers/**/*.c libs/**/*.c)
 ASM_SOURCES = $(wildcard boot/utils/*.asm)
 OBJ=$(SRC:.c=.o)
 

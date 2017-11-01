@@ -1,5 +1,5 @@
-#include "../drivers/screen.h"
-#include "../drivers/keyboard.h"
+#include "../drivers/screen/screen.h"
+#include "../drivers/keyboard/keyboard.h"
 
 int main(){
   clear_screen();
