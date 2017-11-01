@@ -10,7 +10,6 @@
 #define REG_SCREEN_CTRL 0x3D4
 #define REG_SCREEN_DATA 0x3D5
 
-
 #define CURSOR_HIGH_BYTE 14
 #define CURSOR_LOW_BYTE 15
 
