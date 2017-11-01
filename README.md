@@ -66,4 +66,4 @@ Will print the value at the address pointed by EBX
  * Intel manual [source](https://software.intel.com/sites/default/files/managed/39/c5/325462-sdm-vol-1-2abcd-3abcd.pdf)
  * A BIOS manual that i used to get a list of all the BIOS interrupts [source](http://www.esapcsolutions.com/ecom/drawings/PhoenixBIOS4_rev6UserMan.pdf)
  * Global descriptor table [source](http://wiki.osdev.org/Global_Descriptor_Table)
-
+ * OS DEV WIKI [link](http://wiki.osdev.org/Main_Page)
